@@ -26,7 +26,7 @@ if __name__ == '__main__':
     from sys import argv
 
     if len(argv) > 1:
-        if re.match("([1-9][A-Z][A-Z]+[0-9]|[A-Z][2-9A-Z]?[0-9])[A-Z]{1,4}", argv[1], flags=0):
+        if re.match("([1-9][A-Z][A-Z]+[0-9]|[A-Z][2-9A-Z]?[0-9])[A-Z]{1,4}", argv[1].upper(), flags=0):
             print('%d' % doHash(argv[1]))
             exit(0)
         else:
