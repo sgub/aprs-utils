@@ -1,7 +1,7 @@
 #!/usr/bin/python
 
 # Generate APRS-IS passcode from CALLSIGN
-# algorithm from Xastir calilpass.c
+# algorithm from Xastir callpass.c
 
 import re
 
