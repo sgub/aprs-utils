@@ -12,11 +12,10 @@ def doHash(callsign):
 
     hash = kKEY  # Initialize with the key value
     i = 0
-    length = len(rootCall)
 
-    while (i+1 < length):    # Loop through the string two bytes at a time
-        hash ^= ord(rootCall[i])<<8    # xor high byte with accumulated hash
-        hash ^= ord(rootCall[i+1])    # xor low byte with accumulated hash
+    for i in range(0, len(rootCall) - 1, 2):    # Loop through the string two bytes at a time
+        hash ^= ord(rootCall[i]) << 8    # xor high byte with accumulated hash
+        hash ^= ord(rootCall[i + 1])    # xor low byte with accumulated hash
         i += 2
 
     return int(hash & 0x7fff)    # mask off the high bit so number is always positive
@@ -33,5 +32,5 @@ if __name__ == '__main__':
             print('Bad Callsign')
             exit(1)
     else:
-        print('Usage: ./aprspass.py <callsign>')
+        print('Usage: python ./aprspass.py <callsign[-ssid]>')
         exit(1)
