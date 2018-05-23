@@ -8,5 +8,5 @@ Compatible with python 2.6 2.7 and 3.6
 
 Usage:
 ```
-python aprspass.py callsign[-ssid]
+python ./aprspass.py <callsign[-ssid]>
 ```
