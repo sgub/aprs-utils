@@ -3,8 +3,6 @@
 # Generate APRS-IS passcode from CALLSIGN
 # algorithm from Xastir callpass.c
 
-import re
-
 kKEY = 0x73e2
 
 def doHash(callsign):
@@ -23,6 +21,7 @@ def doHash(callsign):
 
 if __name__ == '__main__':
     from sys import argv
+    import re
 
     if len(argv) > 1:
         if re.match("([1-9][A-Z][A-Z]+[0-9]|[A-Z][2-9A-Z]?[0-9])[A-Z]{1,4}", argv[1].upper(), flags=0):
